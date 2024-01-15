@@ -14,9 +14,9 @@ public class Spotify {
     public static void main(String[] args) {
 
         //Creación de listas musicales
-        ListaMusica listaMusica1 = new ListaMusica();
-        ListaMusica listaMusica2 = new ListaMusica();
-        ListaMusica listaMusica3 = new ListaMusica();
+        ListaReproduccion listaReproduccion1 = new ListaReproduccion();
+        ListaReproduccion listaReproduccion2 = new ListaReproduccion();
+        ListaReproduccion listaReproduccion3 = new ListaReproduccion();
 
         //Creación de elementos para las listas
         Cancion c1 = new Cancion("Me muero", "Yo ahora mismo",
@@ -33,110 +33,110 @@ public class Spotify {
                 "Caminando", "R&B", 180);
 
         //Añadir elementos a la lista 1
-        listaMusica1.guardarElemento(c1);
-        listaMusica1.guardarElemento(c2);
-        listaMusica1.guardarElemento(c3);
+        listaReproduccion1.guardarElemento(c1);
+        listaReproduccion1.guardarElemento(c2);
+        listaReproduccion1.guardarElemento(c3);
 
         //Añadir elementos a la lista 2
-        listaMusica2.guardarElemento(c4);
-        listaMusica2.guardarElemento(c5);
+        listaReproduccion2.guardarElemento(c4);
+        listaReproduccion2.guardarElemento(c5);
 
         //Mostrar por consola las listas 1 y 2
         System.out.println("-------------------Lista 1---------------------");
-        listaMusica1.imprimirLista();
+        listaReproduccion1.imprimirLista();
 
         System.out.println("-------------------Lista 2---------------------");
-        listaMusica2.imprimirLista();
+        listaReproduccion2.imprimirLista();
 
         //Comprobar si las listas contienen elementos
-        System.out.println("Está vacía la lista 1? " + listaMusica1.estaVacio());
-        System.out.println("Está vacía la lista 2? " + listaMusica2.estaVacio());
-        System.out.println("Está vacía la lista 3? " + listaMusica3.estaVacio());
+        System.out.println("Está vacía la lista 1? " + listaReproduccion1.estaVacio());
+        System.out.println("Está vacía la lista 2? " + listaReproduccion2.estaVacio());
+        System.out.println("Está vacía la lista 3? " + listaReproduccion3.estaVacio());
 
         //Comprobar número de elementos
-        System.out.println("Numero elementos lista 1: " + listaMusica1.numeroElementos());
-        System.out.println("Numero elementos lista 2: " + listaMusica2.numeroElementos());
-        System.out.println("Numero elementos lista 3: " + listaMusica3.numeroElementos());
+        System.out.println("Numero elementos lista 1: " + listaReproduccion1.numeroElementos());
+        System.out.println("Numero elementos lista 2: " + listaReproduccion2.numeroElementos());
+        System.out.println("Numero elementos lista 3: " + listaReproduccion3.numeroElementos());
 
         //Ver elemento por posición
-        System.out.println("Elemento 2 lista 1: " + listaMusica1.verElemento(2));
-        System.out.println("Elemento 0 lista 2: " + listaMusica2.verElemento(1));
+        System.out.println("Elemento 2 lista 1: " + listaReproduccion1.verElemento(2));
+        System.out.println("Elemento 0 lista 2: " + listaReproduccion2.verElemento(1));
 
         //Cambiar elemento por uno nuevo
-        listaMusica1.cambiarElemento(2, c6);
-        System.out.println("Nuevo elemento 2 lista 1: " + listaMusica1.verElemento(2));
+        listaReproduccion1.cambiarElemento(2, c6);
+        System.out.println("Nuevo elemento 2 lista 1: " + listaReproduccion1.verElemento(2));
 
         //Eliminar elemento por posicion
-        listaMusica1.eliminarElemento(2);
+        listaReproduccion1.eliminarElemento(2);
 
         //Eliminar elemento si existe en la lista
-        listaMusica1.eliminarElemento(c1);
+        listaReproduccion1.eliminarElemento(c1);
 
         System.out.println("-----------Lista 1 sin elemento c1 ni c3-------");
-        listaMusica1.imprimirLista();
+        listaReproduccion1.imprimirLista();
 
         //Vuelvo a añadir los elementos borrados a la lista 1
         //Aunque tendrán distinto orden que antes (c2, c1, c3)
-        listaMusica1.guardarElemento(c1);
-        listaMusica1.guardarElemento(c3);
+        listaReproduccion1.guardarElemento(c1);
+        listaReproduccion1.guardarElemento(c3);
         System.out.println("-------------------Lista 1---------------------");
-        listaMusica1.imprimirLista();
+        listaReproduccion1.imprimirLista();
 
         //Eliminar elementos de la lista 1 en base a otra lista
         //que contiene los elementos que quiero borrar.
-        ArrayList<Cancion> listaMusica4 = new ArrayList<>();
-        listaMusica4.add(c2);
-        listaMusica4.add(c3);
+        ArrayList<Cancion> listaElementosEliminables = new ArrayList<>();
+        listaElementosEliminables.add(c2);
+        listaElementosEliminables.add(c3);
 
-        listaMusica1.eliminarElementos(listaMusica4);
+        listaReproduccion1.eliminarElementos(listaElementosEliminables);
 
         System.out.println("---------Lista 1 sin elementos c2 y c3---------");
-        listaMusica1.imprimirLista();
+        listaReproduccion1.imprimirLista();
 
         //Vuelvo a añadir los elementos borrados a la lista 1
-        listaMusica1.guardarElemento(c2);
-        listaMusica1.guardarElemento(c3);
+        listaReproduccion1.guardarElemento(c2);
+        listaReproduccion1.guardarElemento(c3);
         System.out.println("-------------------Lista 1---------------------");
-        listaMusica1.imprimirLista();
+        listaReproduccion1.imprimirLista();
 
         //Eliminar todos los elementos de la lista 1
-        listaMusica1.eliminarTodos();
-        System.out.println("Está vacía la lista 1? " + listaMusica1.estaVacio());
+        listaReproduccion1.eliminarTodos();
+        System.out.println("Está vacía la lista 1? " + listaReproduccion1.estaVacio());
 
         //Buscar un elemento con index of
         System.out.println("-------------------Lista 2---------------------");
-        listaMusica2.imprimirLista();
+        listaReproduccion2.imprimirLista();
         System.out.println("El índice del elemento c5 en la lista 2 es: "
-                + listaMusica2.buscarElemento(c5));
+                + listaReproduccion2.buscarElemento(c5));
         
         //Añado todos los elementos disponibles a la lista 3
-        listaMusica3.guardarElemento(c1);
-        listaMusica3.guardarElemento(c2);
-        listaMusica3.guardarElemento(c3);
-        listaMusica3.guardarElemento(c4);
-        listaMusica3.guardarElemento(c5);
-        listaMusica3.guardarElemento(c6);
+        listaReproduccion3.guardarElemento(c1);
+        listaReproduccion3.guardarElemento(c2);
+        listaReproduccion3.guardarElemento(c3);
+        listaReproduccion3.guardarElemento(c4);
+        listaReproduccion3.guardarElemento(c5);
+        listaReproduccion3.guardarElemento(c6);
         System.out.println("-------------------Lista 3---------------------");
-        listaMusica3.imprimirLista();
+        listaReproduccion3.imprimirLista();
         
         //Ordenar por título la lista 3
-        listaMusica3.ordenarTitulo();
+        listaReproduccion3.ordenarTitulo();
         System.out.println("---------Lista 3 ordenada por título-----------");
-        listaMusica3.imprimirLista();
+        listaReproduccion3.imprimirLista();
         
         //Odenar por duración la lista 3
-        listaMusica3.ordenarDuracion();
+        listaReproduccion3.ordenarDuracion();
         System.out.println("---------Lista 3 ordenada por intérprete-------");
-        listaMusica3.imprimirLista();
+        listaReproduccion3.imprimirLista();
         
         //Odenar por título e interprete la lista 3
-        listaMusica3.ordenarTituloInterprete();
+        listaReproduccion3.ordenarTituloInterprete();
         System.out.println("---Lista 3 ordenada por título e intérpre------");
-        listaMusica3.imprimirLista();
+        listaReproduccion3.imprimirLista();
         
         //Buscar elemento con binary search
         System.out.println("El índice del elemento c5 en la lista 3 es: "
-                + listaMusica3.buscarElemento(c5));
+                + listaReproduccion3.buscarElemento(c5));
         
         
     }

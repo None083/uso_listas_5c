@@ -12,67 +12,67 @@ import java.util.Comparator;
  *
  * @author FX506
  */
-public class ListaMusica {
+public class ListaReproduccion {
 
-    private ArrayList<Cancion> listaMusica;
+    private ArrayList<Cancion> listaReproduccion;
 
-    public ListaMusica() {
-        this.listaMusica = new ArrayList<>();
+    public ListaReproduccion() {
+        this.listaReproduccion = new ArrayList<>();
     }
 
     public int numeroElementos() {
-        return this.listaMusica.size();
+        return this.listaReproduccion.size();
     }
 
     public boolean estaVacio() {
-        return this.listaMusica.isEmpty();
+        return this.listaReproduccion.isEmpty();
     }
 
     public Cancion verElemento(int posicion) {
-        return this.listaMusica.get(posicion);
+        return this.listaReproduccion.get(posicion);
     }
 
     public void cambiarElemento(int posicion, Cancion c) {
-        this.listaMusica.set(posicion, c);
+        this.listaReproduccion.set(posicion, c);
     }
 
     public void guardarElemento(Cancion c) {
-        this.listaMusica.add(c);
+        this.listaReproduccion.add(c);
     }
 
     public void eliminarElemento(int posicion) {
-        this.listaMusica.remove(posicion);
+        this.listaReproduccion.remove(posicion);
     }
 
     public void eliminarElemento(Cancion c) {
-        this.listaMusica.remove(c);
+        this.listaReproduccion.remove(c);
     }
 
     public void eliminarElementos(ArrayList<Cancion> listaElementos) {
         for (Cancion c : listaElementos) {
-            this.listaMusica.remove(c);
+            this.listaReproduccion.remove(c);
         }
     }
 
     public void eliminarTodos() {
-        this.listaMusica.clear();
+        this.listaReproduccion.clear();
     }
 
     public void imprimirLista() {
-        this.listaMusica.forEach(System.out::println);
+        this.listaReproduccion.forEach(System.out::println);
     }
 
     public int buscarElemento(Cancion c) {
-        return this.listaMusica.indexOf(c);
+        return this.listaReproduccion.indexOf(c);
     }
 
     public void ordenarTitulo() {
-        Collections.sort(this.listaMusica,
+        Collections.sort(this.listaReproduccion,
                 (m1, m2) -> m1.getTitulo().compareToIgnoreCase(m2.getTitulo()));
     }
 
     public void ordenarDuracion() {
-        Collections.sort(this.listaMusica,
+        Collections.sort(this.listaReproduccion,
                 (m1, m2) -> Integer.compare(m1.getDuracion(), m2.getDuracion()));
     }
 
@@ -84,11 +84,11 @@ public class ListaMusica {
         Comparator<Cancion> criterioTituloInterprete
                 = criterioTitulo.thenComparing(criterioInterprete);
 
-        Collections.sort(this.listaMusica, criterioTituloInterprete);
+        Collections.sort(this.listaReproduccion, criterioTituloInterprete);
     }
 
     public int buscarElementoBinario(Cancion c) {
-        return Collections.binarySearch(this.listaMusica,
+        return Collections.binarySearch(this.listaReproduccion,
                 c,
                 (e1, e2) -> e1.getInterprete().compareToIgnoreCase(e2.getInterprete()));
     }
